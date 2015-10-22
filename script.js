@@ -2,7 +2,9 @@
  * Created by ramoncuni on 21/10/15.
  */
 
+var amplereal;
 var ample;
+var altreal;
 var alt;
 var unitats;
 var subtotal;
@@ -17,8 +19,10 @@ window.onload = function () {
 function calcula() {
     //recollim els valors del formulari (quantitat i mides)
     unitats = parseInt(document.getElementById('quantitat').value);
-    ample = toMultiploDe6(parseInt(document.getElementById('ample').value));
-    alt = toMultiploDe6(parseInt(document.getElementById('alt').value));
+    amplereal = parseInt(document.getElementById('ample').value);
+    ample = toMultiploDe6(amplereal);
+    altreal = parseInt(document.getElementById('alt').value);
+    alt = toMultiploDe6(altreal);
     console.log(unitats);
     console.log(ample);
     console.log(alt);
@@ -45,7 +49,7 @@ function montaResultat() {
         div.innerHTML += '<div class="row"><div class="th">Unitats</div><div class="th">Ample</div><div class="th">Alt</div><div class="th">Preu Unitari</div><div class="th">Subtotal</div></div>';
         bandereta = false;
     }
-    div.innerHTML += '<div class="row"><div class="td">' + unitats + '</div><div class="td">' + ample + '</div><div class="td">' + alt + '</div><div class="td">' + resultat + '</div><div class="td">' + subtotal + '</div></div>';
+    div.innerHTML += '<div class="row"><div class="td">' + unitats + '</div><div class="td">' + amplereal + '</div><div class="td">' + altreal + '</div><div class="td">' + resultat + '</div><div class="td">' + subtotal + '</div></div>';
 }
 
 function toMultiploDe6(num) {
