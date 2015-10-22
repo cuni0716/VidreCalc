@@ -5,8 +5,9 @@
 var ample;
 var alt;
 var unitats;
-var total;
+var subtotal;
 var resultat = 0;
+var bandereta = true;
 
 
 window.onload = function () {
@@ -34,10 +35,17 @@ function calcula() {
         console.log(preu / 2);
         resultat = parseFloat(preu / 2);
     }
-    total = resultat * unitats;
-    var div = document.getElementById('resultat');
-    div.innerHTML += '<p>Mides de càlcul: ' + ample + ' x ' + alt + '</p>';
-    div.innerHTML += '<p>' + resultat + '€/ud.</p>';
+    subtotal = resultat * unitats;
+    montaResultat();
+}
+
+function montaResultat() {
+    var div = document.getElementById('table');
+    if (bandereta == true) {
+        div.innerHTML += '<p class="row"><span class="th">Unitats</span><span class="th">Ample</span><span class="th">Alt</span><span class="th">Preu Unitari</span><span class="th">Subtotal</span></p>';
+        bandereta = false;
+    }
+    div.innerHTML += '<p class="row"><span class="td">' + unitats + '</span><span class="td">' + ample + '</span><span class="td">' + alt + '</span><span class="td">' + resultat + '</span><span class="td">' + subtotal + '</span></p>';
 }
 
 function toMultiploDe6(num) {
