@@ -15,15 +15,16 @@ var total = new Array();
 
 window.onload = function () {
     document.getElementById('calcula').onclick = calcula;
+    document.getElementById('acaba').onclick = acaba;
 }
 
 function calcula() {
     //recollim els valors del formulari (quantitat i mides)
     unitats = parseInt(document.getElementById('quantitat').value);
     amplereal = parseFloat(document.getElementById('ample').value);
-    ample = toMultiploDe6(amplereal);
+    ample = 1 * toMultiploDe6(amplereal);
     altreal = parseFloat(document.getElementById('alt').value);
-    alt = toMultiploDe6(altreal);
+    alt = 1 * toMultiploDe6(altreal);
     console.log(unitats);
     console.log(ample);
     console.log(alt);
@@ -59,14 +60,14 @@ function montaResultat(preu) {
 
 function toMultiploDe6(num) {
     if (num % 6 === 0) {
-        return parseFloat(num);
+        return parseInt(num);
     } else {
         while (num % 6 !== 0) {
             num++;
             //console.log(num);
         }
     }
-    return parseFloat(num);
+    return parseInt(num);
 }
 
 //montam el preu depenent del vidre triat al formulari
@@ -101,4 +102,13 @@ function montaPreu() {
     //aqui hauría de fer que comprovas si no han triat cap preu al formulari
     document.getElementById('error').innerHTML = '<p>Has de triar algun tipus de vidre!</p>';
     return 0;
+}
+
+function acaba() {
+    totalPresu = 0;
+    for (var calculTotal in total) {
+        totalPresu += parseFloat(calculTotal);
+        console.log(totalPresu);
+    }
+    document.getElementById('table').innerHTML += '<div class="row"><div class="td">' + unitats + '</div><div class="td"></div><div class="td"></div><div class="td"></div><div class="td">' + totalPresu + '</div></div>';
 }
