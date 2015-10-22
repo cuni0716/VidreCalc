@@ -10,6 +10,7 @@ var unitats;
 var subtotal;
 var resultat = 0;
 var bandereta = true;
+var total = new Array();
 
 
 window.onload = function () {
@@ -19,9 +20,9 @@ window.onload = function () {
 function calcula() {
     //recollim els valors del formulari (quantitat i mides)
     unitats = parseInt(document.getElementById('quantitat').value);
-    amplereal = parseInt(document.getElementById('ample').value);
+    amplereal = parseFloat(document.getElementById('ample').value);
     ample = toMultiploDe6(amplereal);
-    altreal = parseInt(document.getElementById('alt').value);
+    altreal = parseFloat(document.getElementById('alt').value);
     alt = toMultiploDe6(altreal);
     console.log(unitats);
     console.log(ample);
@@ -40,16 +41,20 @@ function calcula() {
         resultat = parseFloat(preu / 2);
     }
     subtotal = resultat * unitats;
-    montaResultat();
+    total.push(subtotal);
+    montaResultat(preu);
 }
 
-function montaResultat() {
-    var div = document.getElementById('table');
-    if (bandereta == true) {
-        div.innerHTML += '<div class="row"><div class="th">Unitats</div><div class="th">Ample</div><div class="th">Alt</div><div class="th">Preu Unitari</div><div class="th">Subtotal</div></div>';
-        bandereta = false;
+function montaResultat(preu) {
+    if (preu !== 0) {
+        var div = document.getElementById('table');
+        if (bandereta == true) {
+            div.innerHTML += '<div class="row"><div class="th">Unitats</div><div class="th">Ample</div><div class="th">Alt</div><div class="th">Preu Unitari</div><div class="th">Subtotal</div></div>';
+            bandereta = false;
+        }
+        div.innerHTML += '<div class="row"><div class="td">' + unitats + '</div><div class="td">' + amplereal + '</div><div class="td">' + altreal + '</div><div class="td">' + resultat + '</div><div class="td">' + subtotal + '</div></div>';
+        document.getElementById('error').innerHTML = '';
     }
-    div.innerHTML += '<div class="row"><div class="td">' + unitats + '</div><div class="td">' + amplereal + '</div><div class="td">' + altreal + '</div><div class="td">' + resultat + '</div><div class="td">' + subtotal + '</div></div>';
 }
 
 function toMultiploDe6(num) {
@@ -94,4 +99,6 @@ function montaPreu() {
         //cercam es preu de substitució des vidre interior
     }
     //aqui hauría de fer que comprovas si no han triat cap preu al formulari
+    document.getElementById('error').innerHTML = '<p>Has de triar algun tipus de vidre!</p>';
+    return 0;
 }
