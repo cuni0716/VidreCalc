@@ -42,10 +42,10 @@ function calcula() {
 function montaResultat() {
     var div = document.getElementById('table');
     if (bandereta == true) {
-        div.innerHTML += '<p class="row"><span class="th">Unitats</span><span class="th">Ample</span><span class="th">Alt</span><span class="th">Preu Unitari</span><span class="th">Subtotal</span></p>';
+        div.innerHTML += '<div class="row"><div class="th">Unitats</div><div class="th">Ample</div><div class="th">Alt</div><div class="th">Preu Unitari</div><div class="th">Subtotal</div></div>';
         bandereta = false;
     }
-    div.innerHTML += '<p class="row"><span class="td">' + unitats + '</span><span class="td">' + ample + '</span><span class="td">' + alt + '</span><span class="td">' + resultat + '</span><span class="td">' + subtotal + '</span></p>';
+    div.innerHTML += '<div class="row"><div class="td">' + unitats + '</div><div class="td">' + ample + '</div><div class="td">' + alt + '</div><div class="td">' + resultat + '</div><div class="td">' + subtotal + '</div></div>';
 }
 
 function toMultiploDe6(num) {
