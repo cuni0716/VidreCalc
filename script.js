@@ -60,7 +60,7 @@ function montaResultat(preu) {
       div.innerHTML += '<div class="row"><div class="th">Unitats</div><div class="th">Ample</div><div class="th">Alt</div><div class="th">Preu Unitari</div><div class="th">Subtotal</div></div>';
       bandereta = false;
     }
-    div.innerHTML += '<div class="row"><div class="td">' + unitats + '</div><div class="td">' + amplereal + '</div><div class="td">' + altreal + '</div><div class="td">' + resultat + '</div><div class="td">' + subtotal + '</div></div>';
+    div.innerHTML += '<div class="row"><div class="td">' + unitats + '</div><div class="td">' + amplereal + '</div><div class="td">' + altreal + '</div><div class="td">' + resultat.toFixed(2) + '</div><div class="td">' + subtotal.toFixed(2) + '</div></div>';
     document.getElementById('error').innerHTML = '';
   }
 }
@@ -520,7 +520,8 @@ function montaPreu() {
 }
 
 function reset() {
-
+  document.getElementById('table').innerHTML = '';
+  total = new Array();
 }
 
 function calculaDesconte(preu) {
@@ -539,5 +540,5 @@ function acaba() {
     totalPresu += parseFloat(total);
     //console.log(totalPresu);
   }
-  document.getElementById('table').innerHTML += '<div class="row"><div class="td"> - </div><div class="td"> - </div><div class="td"> - </div><div class="td"> - </div><div class="td total">' + totalPresu + '</div></div>';
+  document.getElementById('table').innerHTML += '<div class="row"><div class="td"> - </div><div class="td"> - </div><div class="td"> - </div><div class="td"> - </div><div class="td total">' + totalPresu.toFixed(2) + '</div></div>';
 }
