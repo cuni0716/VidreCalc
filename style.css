@@ -5,16 +5,8 @@
   text-align: center;
 }
 
-.unitats {
-  margin-left: 40px;
-}
-
-.ample {
-  margin-left: 80px;
-}
-
-.alt {
-  margin-left: 69px;
+h1 {
+  border-bottom: 1px solid black;
 }
 
 #error {
