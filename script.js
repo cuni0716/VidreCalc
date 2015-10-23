@@ -132,6 +132,7 @@ function montaPreu() {
       if (vidreinterior == "") {
         document.getElementById('error').innerHTML += '<p>Vidre interior incorrecte</p>';
       }
+      return 0;
     } else {
       var preu = 13;
       var milimetros = 0;
@@ -543,7 +544,6 @@ function montaPreu() {
       return afegirRecarrec(preu, milimetros);
     }
   }
-  //aqui hauría de fer que comprovas si no han triat cap preu al formulari
   document.getElementById('error').innerHTML = '<p>Has de triar algun tipus de vidre!</p>';
   return 0;
 }
