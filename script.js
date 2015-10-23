@@ -569,4 +569,5 @@ function acaba() {
     totalPresu += parseFloat(total);
   }
   document.getElementById('table').innerHTML += '<div class="row"><div class="td"> - </div><div class="td"> - </div><div class="td"> - </div><div class="td"> - </div><div class="td total">' + totalPresu.toFixed(2) + '</div></div>';
+  bandereta = false;
 }
