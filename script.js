@@ -512,7 +512,9 @@ function montaPreu() {
       milimetros += 6;
       break;
     }
-    return afegirRecarrec(preu, milimetros);
+    if (preu !== 13) {
+      return afegirRecarrec(preu, milimetros);
+    }
   }
   //aqui hauría de fer que comprovas si no han triat cap preu al formulari
   document.getElementById('error').innerHTML = '<p>Has de triar algun tipus de vidre!</p>';
