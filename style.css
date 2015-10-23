@@ -1,42 +1,46 @@
 /*CSS*/
 
 * {
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 .unitats {
-    margin-left: 40px;
+  margin-left: 40px;
 }
 
 .ample {
-    margin-left: 80px;
+  margin-left: 80px;
 }
 
 .alt {
-    margin-left: 69px;
+  margin-left: 69px;
 }
 
 #error {
-    color: red;
+  color: red;
 }
 
 #table {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 div.row {
-    width: 100%;
-    border-bottom: 0.5px solid black;
+  width: 100%;
+  border-bottom: 1px solid black;
 }
 
 div.th,
 div.td {
-    text-align: center;
-    width: 19%;
-    display: inline-block;
+  text-align: center;
+  width: 19%;
+  display: inline-block;
 }
 
 div.th {
-    font-weight: 600;
-    margin-bottom: 10px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.total {
+  font-weight: 600;
 }
