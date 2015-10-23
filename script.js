@@ -20,37 +20,48 @@ var bandereta = true;
 var total = new Array();
 
 window.onload = function () {
+  console.log('Programa - ok');
   document.getElementById('calcula').onclick = calcula;
   document.getElementById('acaba').onclick = acaba;
   document.getElementById('reset').onclick = reset;
 }
 
 function calcula() {
-  //recollim els valors del formulari (quantitat i mides)
-  unitats = parseInt(document.getElementById('quantitat').value);
-  amplereal = parseFloat(document.getElementById('ample').value);
-  ample = 1 * toMultiploDe6(amplereal);
-  altreal = parseFloat(document.getElementById('alt').value);
-  alt = 1 * toMultiploDe6(altreal);
-  //console.log(unitats);
-  //console.log(ample);
-  //console.log(alt);
-
-  var preu = montaPreu();
-
-  //si la superfície del vidre es major de mig m2 calculam el preu
-  if (parseFloat(ample * alt / 10000) > 0.5) {
-    //console.log((ample * alt) / 10000);
-    resultat = parseFloat((ample * alt * preu) / 10000);
-    //si la superfície del vidre no arriba a mig m2 en cobram mig
+  console.log('Afegeix - ok');
+  var error = document.getElementById('error');
+  if (document.getElementById('quantitat').value == 0) {
+    console.log('quantitat');
+    error.innerHTML = '<p>Has de seleccionar una quantitat</p>';
+  } else if (document.getElementById('ample').value == 0) {
+    error.innerHTML = '<p>Amplari incorrecte</p>';
+  } else if (document.getElementById('alt').value == 0) {
+    error.innerHTML = '<p>Altura incorrecte</p>';
   } else {
-    //console.log(preu);
-    //console.log(preu / 2);
-    resultat = parseFloat(preu / 2);
+    //recollim els valors del formulari (quantitat i mides)
+    unitats = parseInt(document.getElementById('quantitat').value);
+    amplereal = parseFloat(document.getElementById('ample').value);
+    //passam les mides al próxim multiple de 6
+    ample = 1 * toMultiploDe6(amplereal);
+    altreal = parseFloat(document.getElementById('alt').value);
+    alt = 1 * toMultiploDe6(altreal);
+
+    //anam a cercar el preu
+    var preu = montaPreu();
+
+    //si la superfície del vidre es major de mig m2 calculam el preu
+    if (parseFloat(ample * alt / 10000) > 0.5) {
+      //console.log((ample * alt) / 10000);
+      resultat = parseFloat((ample * alt * preu) / 10000);
+      //si la superfície del vidre no arriba a mig m2 en cobram mig
+    } else {
+      //console.log(preu);
+      //console.log(preu / 2);
+      resultat = parseFloat(preu / 2);
+    }
+    subtotal = resultat * unitats;
+    total.push(subtotal);
+    montaResultat(preu);
   }
-  subtotal = resultat * unitats;
-  total.push(subtotal);
-  montaResultat(preu);
 }
 
 function montaResultat(preu) {
@@ -540,7 +551,6 @@ function acaba() {
     console.log(total);
     console.log(calculTotal);
     totalPresu += parseFloat(total);
-    //console.log(totalPresu);
   }
   document.getElementById('table').innerHTML += '<div class="row"><div class="td"> - </div><div class="td"> - </div><div class="td"> - </div><div class="td"> - </div><div class="td total">' + totalPresu.toFixed(2) + '</div></div>';
 }
