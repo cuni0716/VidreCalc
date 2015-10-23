@@ -6,6 +6,7 @@
 var recarrec = 0.328;
 //Descompte per a les substitucions
 var desconte = 0.35;
+//Preu base a la línia 104!
 
 //VARIABLES
 var amplereal;
@@ -21,6 +22,7 @@ var total = new Array();
 window.onload = function () {
   document.getElementById('calcula').onclick = calcula;
   document.getElementById('acaba').onclick = acaba;
+  document.getElementById('reset').onclick = reset;
 }
 
 function calcula() {
@@ -99,7 +101,7 @@ function montaPreu() {
     }
   } else {
     //si no hi ha seleccionat cap camara base anam als composts
-    //cercar es preu de substitució des vidre exterior
+    //cercam es preu de substitució des vidre exterior
     var vidreexterior = document.getElementById('exterior').value;
     var preu = 13;
     var milimetros = 0;
@@ -319,7 +321,8 @@ function montaPreu() {
       break;
     }
     //cercam es preu de substitució des vidre interior
-    switch (vidreexterior) {
+    var vidreinterior = document.getElementById('interior').value;
+    switch (vidreinterior) {
     case 'float5':
       preu += calculaDesconte(6.23);
       milimetros += 5;
@@ -509,12 +512,15 @@ function montaPreu() {
       milimetros += 6;
       break;
     }
+    return afegirRecarrec(preu, milimetros);
   }
-
+  //aqui hauría de fer que comprovas si no han triat cap preu al formulari
+  document.getElementById('error').innerHTML = '<p>Has de triar algun tipus de vidre!</p>';
+  return 0;
 }
-//aqui hauría de fer que comprovas si no han triat cap preu al formulari
-document.getElementById('error').innerHTML = '<p>Has de triar algun tipus de vidre!</p>';
-return 0;
+
+function reset() {
+
 }
 
 function calculaDesconte(preu) {
