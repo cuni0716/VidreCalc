@@ -27,11 +27,13 @@ div.td {
   text-align: center;
   width: 19%;
   display: inline-block;
+  border-bottom: 1px solid #b4aac6;
 }
 
 div.th {
   font-weight: 600;
   margin-bottom: 10px;
+  border-bottom: 2px solid #b4aac6;
 }
 
 .total {
