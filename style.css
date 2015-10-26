@@ -11,6 +11,7 @@ body {
 
 h1 {
   border-bottom: 1px solid #dddddd;
+  margin-bottom: 30px;
 }
 
 .alert-dismissible {
