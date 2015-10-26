@@ -31,11 +31,11 @@ function calcula() {
   var error = document.getElementById('error');
   if (document.getElementById('quantitat').value == 0) {
     console.log('quantitat');
-    error.innerHTML = '<p>Has de seleccionar una quantitat</p>';
+    error.innerHTML += '<div id="error" class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Alerta!</strong> Has de seleccionar una quantitat!</div>';
   } else if (document.getElementById('ample').value == 0) {
-    error.innerHTML = '<p>Amplari incorrecte</p>';
+    error.innerHTML += '<div id="error" class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Alerta!</strong> Amplària incorrecta!</div>';
   } else if (document.getElementById('alt').value == 0) {
-    error.innerHTML = '<p>Altura incorrecte</p>';
+    error.innerHTML += '<div id="error" class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Alerta!</strong> Altura incorrecta!</div>';
   } else {
     //recollim els valors del formulari (quantitat i mides)
     unitats = parseInt(document.getElementById('quantitat').value);
@@ -119,18 +119,18 @@ function montaPreu() {
     var camara = document.getElementById('camara').value;
     var vidreinterior = document.getElementById('interior').value;
     if (vidreexterior === "" && camara === "" && vidreinterior === "") {
-      document.getElementById('error').innerHTML = '<p>Has de triar algun tipus de vidre!</p>';
+      document.getElementById('error').innerHTML += '<div id="error" class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Alerta!</strong> No has seleccionat cap vidre!</div>';
       return 0;
     }
     if (vidreexterior === "" || camara === "" || vidreinterior === "") {
       if (vidreexterior == "") {
-        document.getElementById('error').innerHTML += '<p>Vidre exterior incorrecte</p>';
+        document.getElementById('error').innerHTML += '<div id="error" class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Alerta!</strong> El vidre exterior no és correcta!</div>';
       }
       if (camara == "") {
-        document.getElementById('error').innerHTML += '<p>Camara incorrecta</p>';
+        document.getElementById('error').innerHTML += '<div id="error" class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Alerta!</strong> La camara no és correcta!</div>';
       }
       if (vidreinterior == "") {
-        document.getElementById('error').innerHTML += '<p>Vidre interior incorrecte</p>';
+        document.getElementById('error').innerHTML += '<div id="error" class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Alerta!</strong> El vidre interior no és correcta!</div>';
       }
       return 0;
     } else {
@@ -544,7 +544,7 @@ function montaPreu() {
       return afegirRecarrec(preu, milimetros);
     }
   }
-  document.getElementById('error').innerHTML = '<p>Has de triar algun tipus de vidre!</p>';
+  document.getElementById('error').innerHTML += '<div id="error" class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Alerta!</strong> No has seleccionat cap vidre!</div>';
   return 0;
 }
 
