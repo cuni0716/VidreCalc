@@ -3,14 +3,19 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <meta name="author" content="Ramon Llompart">
   <title>Calculadora Vidres</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
   <link type="text/css" rel="stylesheet" href="style.css">
   <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
-  <div id="header">
+  <div id="header" class="container">
     <h1>Calculadora vidres</h1>
     <form>
       <br/>
@@ -22,9 +27,9 @@
       <input type="number" name="alt" id="alt" value="0" />
       <br/>
       <br/>
-      <button type="button" id="calcula">Afegeix</button>
-      <button type="button" id="acaba">Acaba</button>
-      <button type="reset" id="reset">Reset</button>
+      <button type="button" id="calcula" class="btn btn-success">Afegeix</button>
+      <button type="button" id="acaba" class="btn btn-info">Acaba</button>
+      <button type="reset" id="reset" class="btn btn-danger">Reset</button>
     </form>
     <div id="error"></div>
   </div>
@@ -199,6 +204,8 @@
   </div>
   <div id="table">
   </div>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 </body>
 
 </html>
