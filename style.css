@@ -6,7 +6,7 @@
 }
 
 h1 {
-  border-bottom: 1px solid #b4aac6;
+  border-bottom: 1px solid #dddddd;
 }
 
 #error {
@@ -19,7 +19,7 @@ h1 {
 
 div.table div.row {
   width: 100%;
-  border-bottom: 1px solid #b4aac6;
+  border-bottom: 1px solid #dddddd;
 }
 
 div.th,
@@ -27,13 +27,13 @@ div.td {
   text-align: center;
   width: 19%;
   display: inline-block;
-  border-bottom: 1px solid #b4aac6;
+  border-bottom: 1px solid #dddddd;
 }
 
 div.th {
   font-weight: 600;
   margin-bottom: 10px;
-  border-bottom: 2px solid #b4aac6;
+  border-bottom: 2px solid #dddddd;
 }
 
 .total {
