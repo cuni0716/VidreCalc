@@ -17,7 +17,7 @@ h1 {
   margin-top: 40px;
 }
 
-div.row {
+div.table div.row {
   width: 100%;
   border-bottom: 1px solid #b4aac6;
 }
