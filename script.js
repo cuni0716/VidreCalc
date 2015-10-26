@@ -551,6 +551,7 @@ function montaPreu() {
 function reset() {
   document.getElementById('table').innerHTML = '';
   total = new Array();
+  bandereta = true;
 }
 
 function calculaDesconte(preu) {
