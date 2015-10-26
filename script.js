@@ -70,7 +70,7 @@ function montaResultat(preu) {
   if (preu !== 0) {
     var div = document.getElementById('table');
     if (bandereta == true) {
-      div.innerHTML += '<div class="row"><div class="th">Unitats</div><div class="th">Ample</div><div class="th">Alt</div><div class="th">Preu Unitari</div><div class="th">Subtotal</div></div>';
+      div.innerHTML += '<div class="row container"><div class="th">Unitats</div><div class="th">Ample</div><div class="th">Alt</div><div class="th">Preu Unitari</div><div class="th">Subtotal</div></div>';
       bandereta = false;
     }
     div.innerHTML += '<div class="row container"><div class="td">' + unitats + '</div><div class="td">' + amplereal + '</div><div class="td">' + altreal + '</div><div class="td">' + resultat.toFixed(2) + '</div><div class="td">' + subtotal.toFixed(2) + '</div></div>';
@@ -569,6 +569,6 @@ function acaba() {
     console.log(calculTotal);
     totalPresu += parseFloat(total);
   }
-  document.getElementById('table').innerHTML += '<div class="row"><div class="td"> - </div><div class="td"> - </div><div class="td"> - </div><div class="td"> - </div><div class="td total">' + totalPresu.toFixed(2) + '</div></div>';
+  document.getElementById('table').innerHTML += '<div class="row container"><div class="td"> - </div><div class="td"> - </div><div class="td"> - </div><div class="td"> - </div><div class="td total">' + totalPresu.toFixed(2) + '</div></div>';
   bandereta = false;
 }
