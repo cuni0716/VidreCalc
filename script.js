@@ -40,11 +40,12 @@ function calcula() {
     //recollim els valors del formulari (quantitat i mides)
     unitats = parseInt(document.getElementById('quantitat').value);
     amplereal = parseFloat(document.getElementById('ample').value);
+    altreal = parseFloat(document.getElementById('alt').value);
     //passam les mides al próxim multiple de 6
     ample = 1 * toMultiploDe6(amplereal);
-    altreal = parseFloat(document.getElementById('alt').value);
     alt = 1 * toMultiploDe6(altreal);
-
+    console.log('ample de calcul: ' + ample);
+    console.log('alt de calcul: ' + alt);
     //anam a cercar el preu
     var preu = montaPreu();
     //si montaPreu te qualque problema tornarà 0, per tant comprovam que no sigui aixi
@@ -178,7 +179,8 @@ function montaPreu() {
         break;
       case '66inc':
         preu += calculaDesconte(44);
-        milimetros += 10;
+        console.log('44 - 35% = ' + calculaDesconte(44));
+        milimetros += 12;
         break;
       case '33mate':
         preu += calculaDesconte(41.15);
@@ -332,6 +334,7 @@ function montaPreu() {
         break;
       case 'cam10':
         preu += calculaDesconte(0.6);
+        console.log('0.60 - 35% = ' + calculaDesconte(0.6));
         break;
       case 'cam12':
         preu += calculaDesconte(0.9);
@@ -353,6 +356,7 @@ function montaPreu() {
       switch (vidreinterior) {
       case 'float5':
         preu += calculaDesconte(6.23);
+        console.log('6.23 - 35% = ' + calculaDesconte(6.23));
         milimetros += 5;
         break;
       case 'float6':
@@ -540,6 +544,8 @@ function montaPreu() {
         milimetros += 6;
         break;
       }
+      console.log('preu base: ' + preu);
+      console.log('milimetros: ' + milimetros);
       return afegirRecarrec(preu, milimetros);
     }
   }
@@ -558,7 +564,12 @@ function calculaDesconte(preu) {
 }
 
 function afegirRecarrec(preuBase, mm) {
+  console.log(preuBase);
+  console.log(mm);
+  console.log((ample * alt) / 10000);
+  console.log('recarreg: ' + (((ample * alt) / 10000) * mm) * recarrec);
   return preuBase + (((ample * alt) / 10000) * mm) * recarrec;
+
 }
 
 function acaba() {
