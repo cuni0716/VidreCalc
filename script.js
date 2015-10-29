@@ -330,26 +330,25 @@ function montaPreu() {
       //cercam es preu de substitució de sa camara
       switch (camara) {
       case 'cam8':
-        preu += calculaDesconte(0.3);
+        preu += 0.3;
         break;
       case 'cam10':
-        preu += calculaDesconte(0.6);
-        console.log('0.60 - 35% = ' + calculaDesconte(0.6));
+        preu += 0.6;
         break;
       case 'cam12':
-        preu += calculaDesconte(0.9);
+        preu += 0.9;
         break;
       case 'cam15':
-        preu += calculaDesconte(1.5);
+        preu += 1.5;
         break;
       case 'cam18':
-        preu += calculaDesconte(1.8);
+        preu += 1.8;
         break;
       case 'cam20':
-        preu += calculaDesconte(3);
+        preu += 3;
         break;
       case 'cam24':
-        preu += calculaDesconte(3.5);
+        preu += 3.5;
         break;
       }
       //cercam es preu de substitució des vidre interior
