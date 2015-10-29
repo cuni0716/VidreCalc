@@ -566,7 +566,7 @@ function afegirRecarrec(preuBase, mm) {
   console.log(preuBase);
   console.log(mm);
   console.log((ample * alt) / 10000);
-  console.log('recarreg: ' + (((ample * alt) / 10000) * mm) * recarrec);
+  console.log('recarreg: ' + ((((ample * alt) / 10000) * mm) * 2.5) * recarrec);
   return preuBase + (((ample * alt) / 10000) * mm) * recarrec;
 
 }
