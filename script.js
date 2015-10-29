@@ -90,7 +90,6 @@ function toMultiploDe6(num) {
   return parseInt(num);
 }
 
-//montam el preu depenent del vidre triat al formulari
 function montaPreu() {
   var div = document.getElementById('cambase').value;
   //si tenim seleccionat un camara base calculam aquest!
