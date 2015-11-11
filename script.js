@@ -129,6 +129,7 @@ function montaPreu() {
       switch (vidreexterior) {
       case 'float4':
         milimetros += 4;
+        break;
       case 'float5':
         preu += calculaDesconte(6.23);
         milimetros += 5;
