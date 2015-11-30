@@ -2,248 +2,256 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="author" content="Ramon Llompart">
-  <title>Calculadora Vidres</title>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-  <!--  My own minified CSS-->
-  <link type="text/css" rel="stylesheet" href="/min/style.min.css">
-  <!--  My own minified JS-->
-  <script type="text/javascript" src="/min/script.min.js"></script>
+    <meta name="author" content="Ramon Llompart">
+    <title>Calculadora Vidres</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous">
+    <!--  My own minified CSS-->
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <!--  My own minified JS-->
+    <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
 
-  <div id="header" class="container">
+<div id="header" class="container">
     <h1>Calculadora vidres</h1>
+
     <form>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="form-group">
-            <h4><label for="quantitat" class="label label-default">Quantitat</label></h4>
-            <input type="number" name="quantitat" id="quantitat" step="1" value="0" class="form-control" />
-          </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h4><label for="quantitat" class="label label-default">Quantitat</label></h4>
+                    <input type="number" name="quantitat" id="quantitat" step="1" value="0" class="form-control"/>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h4><label for="ample" class="label label-default">Ample</label></h4>
+                    <input type="number" name="ample" id="ample" value="0" class="form-control"/>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h4><label for="alt" class="label label-default">Alt</label></h4>
+                    <input type="number" name="alt" id="alt" value="0" class="form-control"/>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <h4><label for="ample" class="label label-default">Ample</label></h4>
-            <input type="number" name="ample" id="ample" value="0" class="form-control" />
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <h4><label for="alt" class="label label-default">Alt</label></h4>
-            <input type="number" name="alt" id="alt" value="0" class="form-control" />
-          </div>
-        </div>
-      </div>
     </form>
     <div class="row">
-      <div class="col-md-4"></div>
-      <div class="col-md-4">
-        <button type="button" id="calcula" class="btn btn-success">Afegeix</button>
-        <button type="button" id="acaba" class="btn btn-info">Acaba</button>
-        <button type="reset" id="reset" class="btn btn-danger">Reset</button>
-      </div>
-      <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <button type="button" id="calcula" class="btn btn-success">Afegeix</button>
+            <button type="button" id="acaba" class="btn btn-info">Acaba</button>
+            <button type="reset" id="reset" class="btn btn-danger">Reset</button>
+        </div>
+        <div class="col-md-4"></div>
     </div>
     <div id="error" class="container"></div>
-  </div>
-  <div id="content" class="container">
+</div>
+<div id="content" class="container">
     <h2>Camara base</h2>
+
     <div class="row">
-      <div class="col-md-4"></div>
-      <div class="col-md-4">
-        <div class="form-group">
-          <label for="cambase">Composició</label>
-          <select id="cambase" name="cambase" class="form-control">
-            <option value="" selected="selected"></option>
-            <option value="cb464">4 / 6 / 4</option>
-            <option value="cb484">4 / 8 / 4</option>
-            <option value="cb4104">4 / 10 / 4</option>
-            <option value="cb4124">4 / 12 / 4</option>
-            <option value="cb4154">4 / 15 / 4</option>
-            <option value="cb4184">4 / 18 / 4</option>
-            <option value="cb4204">4 / 20 / 4</option>
-            <option value="cb4244">4 / 24 / 4</option>
-          </select>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="cambase">Composició</label>
+                <select id="cambase" name="cambase" class="form-control">
+                    <option value="" selected="selected"></option>
+                    <option value="cb464">4 / 6 / 4</option>
+                    <option value="cb484">4 / 8 / 4</option>
+                    <option value="cb4104">4 / 10 / 4</option>
+                    <option value="cb4124">4 / 12 / 4</option>
+                    <option value="cb4154">4 / 15 / 4</option>
+                    <option value="cb4184">4 / 18 / 4</option>
+                    <option value="cb4204">4 / 20 / 4</option>
+                    <option value="cb4244">4 / 24 / 4</option>
+                </select>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
     </div>
     <h2>Camara Compost</h2>
-    <div class="row">
-      <div class="form-group">
-        <form>
-          <div class="col-md-4">
-            <label for="exterior">Exterior</label>
-            <select id="exterior" name="exterior" class="form-control">
-              <option value="" selected="selected"></option>
-              <optgroup label="Float">
-                <option value="float4">Float 4mm</option>
-                <option value="float5">Float 5mm</option>
-                <option value="float6">Float 6mm</option>
-                <option value="float8">Float 8mm</option>
-                <option value="float10">Float 10mm</option>
-              </optgroup>
-              <optgroup label="Mateados">
-                <option value="ma4">Mate ácido 4mm</option>
-                <option value="ma5">Mate ácido 5mm</option>
-                <option value="novo4">Novomat 4mm</option>
-                <option value="novo5">Novomat 5mm</option>
-              </optgroup>
-              <optgroup label="Parsol Gris / Bronce / Verde ">
-                <option value="parsol4">Parsol 4mm</option>
-                <option value="parsol5">Parsol 5mm</option>
-                <option value="parsol6">Parsol 6mm</option>
-                <option value="parsol10">Parsol 10mm</option>
-              </optgroup>
-              <optgroup label="Clarglas inc">
-                <option value="carglas4">Clarglas 4mm</option>
-                <option value="carglas6">Clarglas 6mm</option>
-              </optgroup>
-              <optgroup label="Laminados">
-                <option value="33inc">3+3 incoloro</option>
-                <option value="44inc">4+4 incoloro</option>
-                <option value="55inc">5+5 incoloro</option>
-                <option value="66inc">6+6 incoloro</option>
-                <option value="33mate">3+3 mate</option>
-                <option value="44mate">4+4 mate</option>
-                <option value="55mate">5+5 mate</option>
-                <option value="66mate">6+6 mate</option>
-                <option value="33sil">3+3 silence</option>
-                <option value="44sil">4+4 silence</option>
-                <option value="55sil">5+5 silence</option>
-                <option value="66sil">6+6 silence</option>
-              </optgroup>
-              <optgroup label="Laminados Control Solar">
-                <option value="44stb120">Laminado cool lite STB 120 Azul 4+4</option>
-                <option value="66stb120">Laminado cool lite STB 120 Azul 6+6</option>
-                <option value="44st150">Laminado cool lite ST 150 Neutro 4+4</option>
-                <option value="66st150">Laminado cool lite ST 150 Neutro 6+6</option>
-                <option value="44st167">Laminado cool lite ST 167 Neutro 4+4</option>
-                <option value="66st167">Laminado cool lite ST 167 Neutro 6+6</option>
-              </optgroup>
-              <optgroup label="Control Solar y Bajo Emisivo">
-                <option value="clxt4">Cool lite XTREME 60/28 capa selectiva 4mm</option>
-                <option value="clxt6">Cool lite XTREME 60/28 capa selectiva 6mm</option>
-                <option value="clstb6">Cool lite STB 120 Azul</option>
-                <option value="clst4">Cool lite ST 150 Neutro 4mm</option>
-                <option value="clst6">Cool lite ST 150 Neutro 6mm</option>
-                <option value="clst1674">Cool lite ST 167 Neutro 4mm</option>
-                <option value="clst1676">Cool lite ST 167 Neutro 6mm</option>
-                <option value="sun4">Sunergy 4mm</option>
-                <option value="sun6">Sunergy 6mm</option>
-                <option value="ref6">Reflectasol 6mm</option>
-                <option value="clstt6150">Cool lite ST 150/167 TEMPLADO 6mm</option>
-                <option value="clst6120">Cool lite STB 120 Azul TEMPLADO 6mm</option>
-                <option value="stop5">Stopsol 5mm</option>
-                <option value="plan4">Planitherm 4S 4mm</option>
-                <option value="plan6">Planitherm 4S 6mm</option>
-                <option value="planfn4">Planitherm Futur N 4mm</option>
-                <option value="planfn6">Planitherm Futur N 6mm</option>
-                <option value="kglas6">"K" Glass 6mm</option>
-              </optgroup>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label for="camara">Camara</label>
-            <select id="camara" name="camara" class="form-control">
-              <option value="" selected="selected"></option>
-              <option value="cam8">Camara 8mm</option>
-              <option value="cam10">Camara 10mm</option>
-              <option value="cam12">Camara 12mm</option>
-              <option value="cam15">Camara 15mm</option>
-              <option value="cam18">Camara 18mm</option>
-              <option value="cam20">Camara 20mm</option>
-              <option value="cam24">Camara 24mm</option>
-              <br/>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label for="interior">Interior </label>
-            <select id="interior" name="interior" class="form-control">
-              <option value="" selected="selected"></option>
-              <optgroup label="Float">
-                <option value="float5">Float 5mm</option>
-                <option value="float6">Float 6mm</option>
-                <option value="float8">Float 8mm</option>
-                <option value="float10">Float 10mm</option>
-              </optgroup>
-              <optgroup label="Mateados">
-                <option value="ma4">Mate ácido 4mm</option>
-                <option value="ma5">Mate ácido 5mm</option>
-                <option value="novo4">Novomat 4mm</option>
-                <option value="novo5">Novomat 5mm</option>
-              </optgroup>
-              <optgroup label="Parsol Gris / Bronce / Verde ">
-                <option value="parsol4">Parsol 4mm</option>
-                <option value="parsol5">Parsol 5mm</option>
-                <option value="parsol6">Parsol 6mm</option>
-                <option value="parsol10">Parsol 10mm</option>
-              </optgroup>
-              <optgroup label="Clarglas inc">
-                <option value="carglas4">Clarglas 4mm</option>
-                <option value="carglas6">Clarglas 6mm</option>
-              </optgroup>
-              <optgroup label="Laminados">
-                <option value="33inc">3+3 incoloro</option>
-                <option value="44inc">4+4 incoloro</option>
-                <option value="55inc">5+5 incoloro</option>
-                <option value="66inc">6+6 incoloro</option>
-                <option value="33mate">3+3 mate</option>
-                <option value="44mate">4+4 mate</option>
-                <option value="55mate">5+5 mate</option>
-                <option value="66mate">6+6 mate</option>
-                <option value="33sil">3+3 silence</option>
-                <option value="44sil">4+4 silence</option>
-                <option value="55sil">5+5 silence</option>
-                <option value="66sil">6+6 silence</option>
-              </optgroup>
-              <optgroup label="Laminados Control Solar">
-                <option value="44stb120">Laminado cool lite STB 120 Azul 4+4</option>
-                <option value="66stb120">Laminado cool lite STB 120 Azul 6+6</option>
-                <option value="44st150">Laminado cool lite ST 150 Neutro 4+4</option>
-                <option value="66st150">Laminado cool lite ST 150 Neutro 6+6</option>
-                <option value="44st167">Laminado cool lite ST 167 Neutro 4+4</option>
-                <option value="66st167">Laminado cool lite ST 167 Neutro 6+6</option>
-              </optgroup>
-              <optgroup label="Control Solar y Bajo Emisivo">
-                <option value="clxt4">Cool lite XTREME 60/28 capa selectiva 4mm</option>
-                <option value="clxt6">Cool lite XTREME 60/28 capa selectiva 6mm</option>
-                <option value="clstb6">Cool lite STB 120 Azul</option>
-                <option value="clst4">Cool lite ST 150 Neutro 4mm</option>
-                <option value="clst6">Cool lite ST 150 Neutro 6mm</option>
-                <option value="clst1674">Cool lite ST 167 Neutro 4mm</option>
-                <option value="clst1676">Cool lite ST 167 Neutro 6mm</option>
-                <option value="sun4">Sunergy 4mm</option>
-                <option value="sun6">Sunergy 6mm</option>
-                <option value="ref6">Reflectasol 6mm</option>
-                <option value="clstt6150">Cool lite ST 150/167 TEMPLADO 6mm</option>
-                <option value="clst6120">Cool lite STB 120 Azul TEMPLADO 6mm</option>
-                <option value="stop5">Stopsol 5mm</option>
-                <option value="plan4">Planitherm 4S 4mm</option>
-                <option value="plan6">Planitherm 4S 6mm</option>
-                <option value="planfn4">Planitherm Futur N 4mm</option>
-                <option value="planfn6">Planitherm Futur N 6mm</option>
-                <option value="kglas6">"K" Glass 6mm</option>
-              </optgroup>
-            </select>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div id="table" class="container"></div>
 
-  <!--  JQUERY (needed for bootstraping!)-->
-  <script src="/min/jquery-2.1.1.min.js"></script>
-  <!-- Latest compiled and minified Bootstrap JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <div class="row">
+        <div class="form-group">
+            <form>
+                <div class="col-md-4">
+                    <label for="exterior">Exterior</label>
+                    <select id="exterior" name="exterior" class="form-control">
+                        <option value="" selected="selected"></option>
+                        <optgroup label="Float">
+                            <option value="float4">Float 4mm</option>
+                            <option value="float5">Float 5mm</option>
+                            <option value="float6">Float 6mm</option>
+                            <option value="float8">Float 8mm</option>
+                            <option value="float10">Float 10mm</option>
+                        </optgroup>
+                        <optgroup label="Mateados">
+                            <option value="ma4">Mate ácido 4mm</option>
+                            <option value="ma5">Mate ácido 5mm</option>
+                            <option value="novo4">Novomat 4mm</option>
+                            <option value="novo5">Novomat 5mm</option>
+                        </optgroup>
+                        <optgroup label="Parsol Gris / Bronce / Verde ">
+                            <option value="parsol4">Parsol 4mm</option>
+                            <option value="parsol5">Parsol 5mm</option>
+                            <option value="parsol6">Parsol 6mm</option>
+                            <option value="parsol10">Parsol 10mm</option>
+                        </optgroup>
+                        <optgroup label="Clarglas inc">
+                            <option value="carglas4">Clarglas 4mm</option>
+                            <option value="carglas6">Clarglas 6mm</option>
+                        </optgroup>
+                        <optgroup label="Laminados">
+                            <option value="33inc">3+3 incoloro</option>
+                            <option value="44inc">4+4 incoloro</option>
+                            <option value="55inc">5+5 incoloro</option>
+                            <option value="66inc">6+6 incoloro</option>
+                            <option value="33mate">3+3 mate</option>
+                            <option value="44mate">4+4 mate</option>
+                            <option value="55mate">5+5 mate</option>
+                            <option value="66mate">6+6 mate</option>
+                            <option value="33sil">3+3 silence</option>
+                            <option value="44sil">4+4 silence</option>
+                            <option value="55sil">5+5 silence</option>
+                            <option value="66sil">6+6 silence</option>
+                        </optgroup>
+                        <optgroup label="Laminados Control Solar">
+                            <option value="44stb120">Laminado cool lite STB 120 Azul 4+4</option>
+                            <option value="66stb120">Laminado cool lite STB 120 Azul 6+6</option>
+                            <option value="44st150">Laminado cool lite ST 150 Neutro 4+4</option>
+                            <option value="66st150">Laminado cool lite ST 150 Neutro 6+6</option>
+                            <option value="44st167">Laminado cool lite ST 167 Neutro 4+4</option>
+                            <option value="66st167">Laminado cool lite ST 167 Neutro 6+6</option>
+                        </optgroup>
+                        <optgroup label="Control Solar y Bajo Emisivo">
+                            <option value="clxt4">Cool lite XTREME 60/28 capa selectiva 4mm</option>
+                            <option value="clxt6">Cool lite XTREME 60/28 capa selectiva 6mm</option>
+                            <option value="clstb6">Cool lite STB 120 Azul</option>
+                            <option value="clst4">Cool lite ST 150 Neutro 4mm</option>
+                            <option value="clst6">Cool lite ST 150 Neutro 6mm</option>
+                            <option value="clst1674">Cool lite ST 167 Neutro 4mm</option>
+                            <option value="clst1676">Cool lite ST 167 Neutro 6mm</option>
+                            <option value="sun4">Sunergy 4mm</option>
+                            <option value="sun6">Sunergy 6mm</option>
+                            <option value="ref6">Reflectasol 6mm</option>
+                            <option value="clstt6150">Cool lite ST 150/167 TEMPLADO 6mm</option>
+                            <option value="clst6120">Cool lite STB 120 Azul TEMPLADO 6mm</option>
+                            <option value="stop5">Stopsol 5mm</option>
+                            <option value="plan4">Planitherm 4S 4mm</option>
+                            <option value="plan6">Planitherm 4S 6mm</option>
+                            <option value="planfn4">Planitherm Futur N 4mm</option>
+                            <option value="planfn6">Planitherm Futur N 6mm</option>
+                            <option value="kglas6">"K" Glass 6mm</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="camara">Camara</label>
+                    <select id="camara" name="camara" class="form-control">
+                        <option value="" selected="selected"></option>
+                        <option value="cam6">Camara 6mm</option>
+                        <option value="cam8">Camara 8mm</option>
+                        <option value="cam10">Camara 10mm</option>
+                        <option value="cam12">Camara 12mm</option>
+                        <option value="cam15">Camara 15mm</option>
+                        <option value="cam18">Camara 18mm</option>
+                        <option value="cam20">Camara 20mm</option>
+                        <option value="cam24">Camara 24mm</option>
+                        <br/>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="interior">Interior </label>
+                    <select id="interior" name="interior" class="form-control">
+                        <option value="" selected="selected"></option>
+                        <optgroup label="Float">
+                            <option value="float5">Float 5mm</option>
+                            <option value="float6">Float 6mm</option>
+                            <option value="float8">Float 8mm</option>
+                            <option value="float10">Float 10mm</option>
+                        </optgroup>
+                        <optgroup label="Mateados">
+                            <option value="ma4">Mate ácido 4mm</option>
+                            <option value="ma5">Mate ácido 5mm</option>
+                            <option value="novo4">Novomat 4mm</option>
+                            <option value="novo5">Novomat 5mm</option>
+                        </optgroup>
+                        <optgroup label="Parsol Gris / Bronce / Verde ">
+                            <option value="parsol4">Parsol 4mm</option>
+                            <option value="parsol5">Parsol 5mm</option>
+                            <option value="parsol6">Parsol 6mm</option>
+                            <option value="parsol10">Parsol 10mm</option>
+                        </optgroup>
+                        <optgroup label="Clarglas inc">
+                            <option value="carglas4">Clarglas 4mm</option>
+                            <option value="carglas6">Clarglas 6mm</option>
+                        </optgroup>
+                        <optgroup label="Laminados">
+                            <option value="33inc">3+3 incoloro</option>
+                            <option value="44inc">4+4 incoloro</option>
+                            <option value="55inc">5+5 incoloro</option>
+                            <option value="66inc">6+6 incoloro</option>
+                            <option value="33mate">3+3 mate</option>
+                            <option value="44mate">4+4 mate</option>
+                            <option value="55mate">5+5 mate</option>
+                            <option value="66mate">6+6 mate</option>
+                            <option value="33sil">3+3 silence</option>
+                            <option value="44sil">4+4 silence</option>
+                            <option value="55sil">5+5 silence</option>
+                            <option value="66sil">6+6 silence</option>
+                        </optgroup>
+                        <optgroup label="Laminados Control Solar">
+                            <option value="44stb120">Laminado cool lite STB 120 Azul 4+4</option>
+                            <option value="66stb120">Laminado cool lite STB 120 Azul 6+6</option>
+                            <option value="44st150">Laminado cool lite ST 150 Neutro 4+4</option>
+                            <option value="66st150">Laminado cool lite ST 150 Neutro 6+6</option>
+                            <option value="44st167">Laminado cool lite ST 167 Neutro 4+4</option>
+                            <option value="66st167">Laminado cool lite ST 167 Neutro 6+6</option>
+                        </optgroup>
+                        <optgroup label="Control Solar y Bajo Emisivo">
+                            <option value="clxt4">Cool lite XTREME 60/28 capa selectiva 4mm</option>
+                            <option value="clxt6">Cool lite XTREME 60/28 capa selectiva 6mm</option>
+                            <option value="clstb6">Cool lite STB 120 Azul</option>
+                            <option value="clst4">Cool lite ST 150 Neutro 4mm</option>
+                            <option value="clst6">Cool lite ST 150 Neutro 6mm</option>
+                            <option value="clst1674">Cool lite ST 167 Neutro 4mm</option>
+                            <option value="clst1676">Cool lite ST 167 Neutro 6mm</option>
+                            <option value="sun4">Sunergy 4mm</option>
+                            <option value="sun6">Sunergy 6mm</option>
+                            <option value="ref6">Reflectasol 6mm</option>
+                            <option value="clstt6150">Cool lite ST 150/167 TEMPLADO 6mm</option>
+                            <option value="clst6120">Cool lite STB 120 Azul TEMPLADO 6mm</option>
+                            <option value="stop5">Stopsol 5mm</option>
+                            <option value="plan4">Planitherm 4S 4mm</option>
+                            <option value="plan6">Planitherm 4S 6mm</option>
+                            <option value="planfn4">Planitherm Futur N 4mm</option>
+                            <option value="planfn6">Planitherm Futur N 6mm</option>
+                            <option value="kglas6">"K" Glass 6mm</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="table" class="container"></div>
+
+<!--  JQUERY (needed for bootstraping!)-->
+<script src="/min/jquery-2.1.1.min.js"></script>
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+        integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

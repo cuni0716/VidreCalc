@@ -322,6 +322,9 @@ function montaPreu() {
             }
             //cercam es preu de substitució de sa camara
             switch (camara) {
+                case 'cam6':
+                    preu += 0;
+                    break;
                 case 'cam8':
                     preu += 0.3;
                     break;
