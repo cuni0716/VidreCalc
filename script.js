@@ -126,6 +126,7 @@ function montaPreu() {
         } else {
             var preu = 13;
             var milimetros = 0;
+            //cercam es preu de susbstitució des vidre interior
             switch (vidreexterior) {
                 case 'float4':
                     milimetros += 4;
